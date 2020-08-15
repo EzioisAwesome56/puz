@@ -1,4 +1,4 @@
-_TITLE "Puz for QB64"
+_TITLE "Puz for QB64 V1.0"
 
 DECLARE SUB helpScreen ()
 DECLARE FUNCTION debugOptions! ()
