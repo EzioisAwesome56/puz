@@ -19,7 +19,6 @@ DIM SHARED level AS INTEGER
 
 ' shit for loading maps
 DIM SHARED shita(15), shitb(15), shitc(15), shitd(15), shite(15), shitf(15), shitg(15), shith(15), shiti(15), shitj(15), shit(5) AS INTEGER
-COMMON SHARED shita, shitb, shitc, shitd, shite, shitf, shitg, shith, shiti, shitj, shit AS INTEGER
 
 
 
