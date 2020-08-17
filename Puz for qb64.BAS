@@ -2446,6 +2446,7 @@ SUB runMapEdit
     ' load the black map to use as a base
     DIM fank AS INTEGER
     DIM weed AS STRING
+    DIM count AS INTEGER
     level = 420
     callMapLoad
     ' instead of restarting the program, just process the map data
@@ -2480,15 +2481,13 @@ SUB runMapEdit
                 x = x + 20
                 datax = datax + 1
             CASE "c"
-                'changeTile
+                changeTile
             CASE "p"
                 mapdata(datax, datay) = tile
             CASE "exit"
                 END
-            CASE "save"
-                ' TODO: replace this with the "play" command
-                'INPUT "filename"; move$
-                'saveMap move$
+            CASE "play"
+                count = 0
             CASE ELSE
                 PRINT "epic fail!"
         END SELECT
