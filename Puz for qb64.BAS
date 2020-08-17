@@ -2444,7 +2444,7 @@ END FUNCTION
 
 SUB runMapEdit
     ' load the black map to use as a base
-    DIM dank AS INTEGER
+    DIM fank AS INTEGER
     DIM weed AS STRING
     level = 420
     callMapLoad
@@ -2457,13 +2457,40 @@ SUB runMapEdit
     y = 0
     datay = 0
     datax = 0
-    dank = 0
+    fank = 0
 
-    WHILE dank = 0
-
-
-
-
-
+    WHILE fank = 0
+        CLS
+        LOCATE 25, 1
+        drawMap
+        drawBox x + 0, y + 0, x + 20, y + 20, tile + 0
+        ' basically a direct copy-paste from the DOS source code
+        INPUT "w, a, s, d, c, p"; weed$
+        SELECT CASE weed$
+            CASE "w"
+                y = y - 20
+                datay = datay - 1
+            CASE "s"
+                y = y + 20
+                datay = datay + 1
+            CASE "a"
+                x = x - 20
+                datax = datax - 1
+            CASE "d"
+                x = x + 20
+                datax = datax + 1
+            CASE "c"
+                'changeTile
+            CASE "p"
+                mapdata(datax, datay) = tile
+            CASE "exit"
+                END
+            CASE "save"
+                ' TODO: replace this with the "play" command
+                'INPUT "filename"; move$
+                'saveMap move$
+            CASE ELSE
+                PRINT "epic fail!"
+        END SELECT
     WEND
 END SUB
