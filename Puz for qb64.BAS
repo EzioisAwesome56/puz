@@ -2494,3 +2494,28 @@ SUB runMapEdit
         END SELECT
     WEND
 END SUB
+
+SUB changeTile
+    DIM smoke AS INTEGER
+    DIM what AS STRING
+    smoke = 0
+
+    WHILE smoke = 0
+        CLS
+        LOCATE 25, 1
+        drawMap
+        drawBox x + 0, y + 0, x + 20, y + 20, tile + 0
+        INPUT "a, d, e"; what$
+        SELECT CASE what$
+            CASE "a"
+                tile = tile - 1
+            CASE "d"
+                tile = tile + 1
+            CASE "e"
+                smoke = 1
+            CASE ELSE
+                PRINT "epic fail!"
+        END SELECT
+    WEND
+
+END SUB
